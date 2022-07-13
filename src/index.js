@@ -1,14 +1,15 @@
 // In src/index.js 
-const express = require("express"); 
+const express = require("express");
 
-const app = express(); 
-const PORT = process.env.PORT || 3000; 
+//import router module
+const v1Router = require("./v1/routes");
 
-// For testing purposes 
-app.get("/", (req, res) => { 
-    res.send("<h2>It's Working on Heroku, Deployed!</h2>"); 
-}); 
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => { 
-    console.log(`API is listening on port ${PORT}`); 
+// For testing purposes using baseURL and router 
+app.use("/api/v1", v1Router);
+
+app.listen(PORT, () => {
+    console.log(`API is listening on port ${PORT}`);
 });
