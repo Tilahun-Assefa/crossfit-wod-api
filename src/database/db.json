@@ -82,9 +82,31 @@
         "Go unbroken on the thrusters",
         "Take the abmat sit-ups as a chance to normalize your breath"
       ],
-      "id": "13f05209-6644-4f72-b399-b758aac8d5a4",
-      "createdAt": "7/14/2022, 7:06:57 AM",
-      "updatedAt": "7/14/2022, 7:06:57 AM"
+      "id": "9d3e8ac4-dd5a-488d-bc91-4ea26cfb5bae",
+      "createdAt": "7/15/2022, 10:49:18 PM",
+      "updatedAt": "7/15/2022, 10:49:18 PM"
+    },
+    {
+      "name": "Core Buster Mesi Love",
+      "mode": "Addis Ababa",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "3522ae40-3ca7-4270-b232-98aa539bdc8d",
+      "createdAt": "7/15/2022, 10:50:10 PM",
+      "updatedAt": "7/15/2022, 10:53:40 PM"
     }
   ]
 }
