@@ -107,6 +107,28 @@
       "id": "3522ae40-3ca7-4270-b232-98aa539bdc8d",
       "createdAt": "7/15/2022, 10:50:10 PM",
       "updatedAt": "7/15/2022, 10:53:40 PM"
+    },
+    {
+      "name": "Core Buster Til",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "2670f467-f515-4ebc-b388-9189bc3ce98a",
+      "createdAt": "7/17/2022, 9:06:11 PM",
+      "updatedAt": "7/17/2022, 9:06:12 PM"
     }
   ]
 }
