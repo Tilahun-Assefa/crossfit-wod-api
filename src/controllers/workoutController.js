@@ -105,11 +105,6 @@ const deleteOneWorkout = (req, res) => {
     }
 };
 
-/*********************************************************** */
-function catchError(er) {
-
-}
-
 module.exports = {
     getAllWorkouts,
     getOneWorkout,
