@@ -7,8 +7,7 @@ const getAllWorkouts = (req, res) => {
         const allWorkouts = workoutService.getAllWorkouts();
         res.send({ status: "OK", data: allWorkouts });
     } catch (er) {
-        res.status(er.status || 500)
-            .send({ status: "Failed", data: { error: er.message || er } });
+        res.status(er.status || 500).send({ status: "Failed", data: { error: er.message || er } });
     }
 };
 
