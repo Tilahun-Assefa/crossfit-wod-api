@@ -1,11 +1,18 @@
 // In src/database/Workout.js
-const DB = require("./db.json");
+const DB = require("../database/db.json");
 const { saveToDatabase } = require("./utils");
 
 //return all workouts from database
-const getAllWorkouts = () => {
+const getAllWorkouts = (filterParams) => {
     try {
-        return DB.workouts;
+        let workouts = DB.workouts;
+        if (filterParams.mode) {
+            return DB.workouts.filter((workout) =>
+                workout.mode.toLowerCase().includes(filterParams.mode)
+            );
+        }
+        // Other if-statements will go here for different parameters
+        return workouts;
     } catch (error) {
         throw { status: 500, message: error };
     }
@@ -54,7 +61,7 @@ const updateOneWorkout = (workoutId, changes) => {
             (workout) => workout.id === workoutId
         );
         if (indexForUpdate === -1) {
-            throw { status: 400, message: `Can't find workout with the id '${workoutId}'` };            
+            throw { status: 400, message: `Can't find workout with the id '${workoutId}'` };
         }
         //spread operator merge the changes and return the updated object
         const updatedWorkout = {
@@ -70,24 +77,24 @@ const updateOneWorkout = (workoutId, changes) => {
             status: error.status || 500,
             message: error.message || error
         };
-    }    
+    }
 };
 
 const deleteOneWorkout = (workoutId) => {
     try {
         const indexForDeletion = DB.workouts.findIndex((workout) => workout.id === workoutId);
-    if (indexForDeletion === -1) {
-        throw { status: 400, message: `Can't find workout with the id '${workoutId}'` };         
-        
-    }
-    DB.workouts.splice(indexForDeletion, 1);
-    saveToDatabase(DB);
+        if (indexForDeletion === -1) {
+            throw { status: 400, message: `Can't find workout with the id '${workoutId}'` };
+
+        }
+        DB.workouts.splice(indexForDeletion, 1);
+        saveToDatabase(DB);
     } catch (error) {
         throw {
             status: error.status || 500,
             message: error.message || error
         };
-    }    
+    }
 };
 
 module.exports = { getAllWorkouts, getOneWorkout, createNewWorkout, updateOneWorkout, deleteOneWorkout };
