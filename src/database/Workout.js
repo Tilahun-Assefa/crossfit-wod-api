@@ -6,19 +6,24 @@ const { saveToDatabase } = require("./utils");
 const getAllWorkouts = () => {
     try {
         return DB.workouts;
-
     } catch (error) {
-
+        throw { status: 500, message: error };
     }
 };
 
 //return only one workout from the database
 const getOneWorkout = (workoutId) => {
-    const workout = DB.workouts.find((workout) => workout.id === workoutId);
-    if (!workout) {
-        return;
+    try {
+        const workout = DB.workouts.find((workout) => workout.id === workoutId);
+        if (!workout) {
+            throw;
+        }
+        return workout;
+    } catch (error) {
+        throw { status: 500, message: error };
+
     }
-    return workout;
+
 };
 
 
